@@ -1,0 +1,26 @@
+name: sky_color_finder_flutter
+description: "A beautiful Flutter app that shows sky colors based on zip codes and allows users to set them as wallpapers."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  gradient_borders: ^1.0.0
+  image_gallery_saver: ^2.0.3
+  permission_handler: ^11.3.1
+  path_provider: ^2.1.4
+  flutter_svg: ^2.0.10+1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true

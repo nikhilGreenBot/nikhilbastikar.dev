@@ -146,6 +146,53 @@ nav {
     border: 4px solid rgba(0,0,0,0.08);
 }
 
+/* Hero Links */
+.hero-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: #24292e;
+    color: #fff !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.hero-github:hover {
+    background: #1a1e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.hero-portfolio {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50 !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.hero-portfolio:hover {
+    background: rgba(76, 175, 80, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
 /* Content */
 .content {
     margin-bottom: 3rem;
@@ -546,5 +593,24 @@ footer {
     
     .post {
         border-color: #333;
+    }
+    
+    .hero-github {
+        background: #fff;
+        color: #24292e !important;
+    }
+    
+    .hero-github:hover {
+        background: #f0f0f0;
+    }
+    
+    .hero-portfolio {
+        background: rgba(102, 187, 106, 0.1);
+        color: #66BB6A !important;
+        border-color: rgba(102, 187, 106, 0.3);
+    }
+    
+    .hero-portfolio:hover {
+        background: rgba(102, 187, 106, 0.2);
     }
 } 

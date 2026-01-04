@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Nikhil Bastikar</title>
+    <meta name="description" content="Portfolio of Nikhil Bastikar - Mobile App Developer. View my Flutter, iOS, and Android projects including Skimpulse.">
+    <meta name="author" content="Nikhil Bastikar">
+    <meta name="keywords" content="Nikhil Bastikar, portfolio, Flutter apps, iOS apps, Android apps, Skimpulse, mobile developer">
+    <link rel="canonical" href="https://nikhilbastikar.dev/portfolio.html">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio — Nikhil Bastikar">
+    <meta property="og:description" content="Mobile App Developer portfolio. Flutter, iOS, and Android projects.">
+    <meta property="og:url" content="https://nikhilbastikar.dev/portfolio.html">
+    <meta property="og:image" content="https://nikhilbastikar.dev/og.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Nikhil Bastikar Portfolio",
+      "description": "Mobile app development portfolio",
+      "author": {
+        "@type": "Person",
+        "name": "Nikhil Bastikar"
+      }
+    }
+    </script>
+    <link rel="icon" href="assets/icon-32.jpg" sizes="32x32" type="image/jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-image img {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        .project-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .project-tag {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .project-links a:hover {
+            color: #2E7D32;
+        }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            .project-card {
+                background: #242424;
+                border-color: rgba(255,255,255,0.1);
+            }
+            .project-content h3 {
+                color: #fff;
+            }
+            .project-content p {
+                color: #aaa;
+            }
+            .project-tag {
+                background: rgba(102, 187, 106, 0.15);
+                color: #66BB6A;
+            }
+            .project-links a {
+                color: #66BB6A;
+            }
+            .section-subtitle {
+                color: #999;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container page-fade">
+        <header>
+            <nav>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="portfolio.html" class="active">Portfolio</a>
+                    <a href="photography.html">Photography</a>
+                    <a href="contact.html" class="nav-tag">Contact</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="content" style="margin-top: 2rem;">
+                <h1 class="section-title">My Projects</h1>
+                <p class="section-subtitle">Apps and tools I've built</p>
+
+                <div class="portfolio-grid">
+                    <!-- Skimpulse -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://nikhilgreenbot.github.io/skimpulse/logo.png" alt="Skimpulse App Icon">
+                        </div>
+                        <div class="project-content">
+                            <h3>Skimpulse</h3>
+                            <p>A beautifully crafted technology news app. Stay up-to-date with the latest tech news and articles with a clean, modern interface.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Flutter</span>
+                                <span class="project-tag">iOS</span>
+                                <span class="project-tag">Android</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://nikhilgreenbot.github.io/skimpulse/" target="_blank">Website →</a>
+                                <a href="https://github.com/nikhilGreenBot/skimpulse" target="_blank">GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skyglow -->
+                    <div class="project-card">
+                        <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <span style="font-size: 3rem;">🌅</span>
+                        </div>
+                        <div class="project-content">
+                            <h3>Skyglow</h3>
+                            <p>Another Flutter project showcasing beautiful UI design and mobile development expertise.</p>
+                            <div class="project-tags">
+                                <span class="project-tag">Flutter</span>
+                                <span class="project-tag">Dart</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/nikhilGreenBot/skyglow" target="_blank">GitHub →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Nikhil Bastikar. Built with ❤️</p>
+                <div class="footer-links">
+                    <a href="https://github.com/nikhilGreenBot" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

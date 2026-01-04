@@ -1,15 +1,16 @@
 // Simple JavaScript for Panda's Blog
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Add smooth scrolling for navigation links
+    // Add smooth scrolling / cross-fade for navigation links
     const navLinks = document.querySelectorAll('.nav-links a');
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            // Only handle internal links
-            if (this.getAttribute('href').startsWith('#')) {
+            const href = this.getAttribute('href');
+            // Handle internal anchors
+            if (href.startsWith('#')) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
+                const targetId = href.substring(1);
                 const targetElement = document.getElementById(targetId);
                 
                 if (targetElement) {
@@ -17,6 +18,12 @@ document.addEventListener('DOMContentLoaded', function() {
                         behavior: 'smooth'
                     });
                 }
+            } else if (this.classList.contains('nav-photography')) {
+                // Cross-fade transition to photography page
+                e.preventDefault();
+                document.body.style.transition = 'opacity 300ms ease';
+                document.body.style.opacity = '0';
+                setTimeout(() => { window.location.href = href; }, 280);
             }
         });
     });
