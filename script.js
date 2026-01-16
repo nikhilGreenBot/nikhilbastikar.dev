@@ -69,25 +69,30 @@ document.addEventListener('DOMContentLoaded', function() {
     prefersDark.addListener(updateTheme);
     updateTheme();
 
-    // Add a simple "back to top" functionality
+    // Add a simple "back to top" functionality - Mac OS 8/9 style
     const backToTop = document.createElement('button');
-    backToTop.innerHTML = '↑';
+    backToTop.innerHTML = '▲';
     backToTop.className = 'back-to-top';
     backToTop.style.cssText = `
         position: fixed;
         bottom: 20px;
         right: 20px;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #333;
-        color: white;
-        border: none;
-        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        background: linear-gradient(to bottom, #e8e8e8 0%, #cccccc 50%, #999999 100%);
+        color: #000000;
+        border: 2px solid;
+        border-color: #ffffff #404040 #404040 #ffffff;
+        cursor: default;
         opacity: 0;
         transition: opacity 0.3s ease;
         z-index: 1000;
-        font-size: 18px;
+        font-size: 12px;
+        font-weight: bold;
+        box-shadow: 1px 1px 0 #808080;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     `;
 
     document.body.appendChild(backToTop);
@@ -107,7 +112,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add some console love
-    console.log('🐼 Welcome to Panda\'s Blog!');
-    console.log('Thanks for visiting!');
+    // Mac OS button hover effects
+    backToTop.addEventListener('mouseenter', () => {
+        backToTop.style.background = 'linear-gradient(to bottom, #cccccc 0%, #e8e8e8 50%, #cccccc 100%)';
+    });
+    backToTop.addEventListener('mouseleave', () => {
+        backToTop.style.background = 'linear-gradient(to bottom, #e8e8e8 0%, #cccccc 50%, #999999 100%)';
+    });
+    backToTop.addEventListener('mousedown', () => {
+        backToTop.style.background = 'linear-gradient(to bottom, #999999 0%, #cccccc 50%, #e8e8e8 100%)';
+        backToTop.style.borderColor = '#404040 #ffffff #ffffff #404040';
+    });
+    backToTop.addEventListener('mouseup', () => {
+        backToTop.style.background = 'linear-gradient(to bottom, #cccccc 0%, #e8e8e8 50%, #cccccc 100%)';
+        backToTop.style.borderColor = '#ffffff #404040 #404040 #ffffff';
+    });
+
+    // Add some console love - Mac OS style
+    console.log('Welcome to Macintosh!');
+    console.log('Nikhil Bastikar\'s Personal Website');
+    console.log('System 8.6 - © 1999 Apple Computer, Inc.');
 }); 

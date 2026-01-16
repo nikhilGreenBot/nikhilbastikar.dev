@@ -11,83 +11,177 @@
     <meta property="og:description" content="Get in touch with Nikhil Bastikar - Android developer.">
     <meta property="og:url" content="https://nikhilbastikar.dev/contact.html">
     <meta property="og:image" content="https://nikhilbastikar.dev/og.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact - Nikhil Bastikar">
-    <meta name="twitter:description" content="Android dev. Get in touch.">
-    <meta name="twitter:image" content="https://nikhilbastikar.dev/og.jpg">
     <link rel="icon" href="assets/icon-32.jpg" sizes="32x32" type="image/jpeg">
-    <link rel="icon" href="assets/icon-192.jpg" sizes="192x192" type="image/jpeg">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icon-192.jpg">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container page-fade">
-        <header>
-            <nav>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="photography.html" class="nav-photography">Photography</a>
-                    <a href="contact.html" class="nav-tag active">Contact</a>
-                </div>
-            </nav>
-        </header>
-
-        <main>
-            <div class="hero">
-                <h1>Get In Touch</h1>
-                <p class="tagline">Let's connect and collaborate</p>
-                <img
-                  src="assets/crocodile-hero-320.jpg"
-                  srcset="assets/crocodile-hero-160.jpg 1x, assets/crocodile-hero-320.jpg 2x"
-                  width="160" height="160"
-                  alt="Nikhil Bastikar"
-                  class="profile-photo"
-                />
+    <!-- Mac OS Menu Bar -->
+    <div class="menu-bar">
+        <span class="apple-logo">&#63743;</span>
+        
+        <div class="menu-item">
+            File
+            <div class="menu-dropdown">
+                <div class="menu-dropdown-item">New Window <span class="menu-shortcut">⌘N</span></div>
+                <div class="menu-dropdown-item">Open Location... <span class="menu-shortcut">⌘L</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item">Close Window <span class="menu-shortcut">⌘W</span></div>
+                <div class="menu-dropdown-item">Save Page As... <span class="menu-shortcut">⌘S</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item" onclick="window.print()">Print... <span class="menu-shortcut">⌘P</span></div>
             </div>
+        </div>
+        
+        <div class="menu-item">
+            Edit
+            <div class="menu-dropdown">
+                <div class="menu-dropdown-item disabled">Undo <span class="menu-shortcut">⌘Z</span></div>
+                <div class="menu-dropdown-item disabled">Redo <span class="menu-shortcut">⇧⌘Z</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item" onclick="document.execCommand('cut')">Cut <span class="menu-shortcut">⌘X</span></div>
+                <div class="menu-dropdown-item" onclick="document.execCommand('copy')">Copy <span class="menu-shortcut">⌘C</span></div>
+                <div class="menu-dropdown-item" onclick="document.execCommand('paste')">Paste <span class="menu-shortcut">⌘V</span></div>
+                <div class="menu-dropdown-item" onclick="document.execCommand('selectAll')">Select All <span class="menu-shortcut">⌘A</span></div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            View
+            <div class="menu-dropdown">
+                <div class="menu-dropdown-item" onclick="document.body.requestFullscreen()">Enter Full Screen <span class="menu-shortcut">⌃⌘F</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item" onclick="location.reload()">Reload Page <span class="menu-shortcut">⌘R</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item" onclick="document.body.style.zoom = (parseFloat(document.body.style.zoom) || 1) + 0.1">Zoom In <span class="menu-shortcut">⌘+</span></div>
+                <div class="menu-dropdown-item" onclick="document.body.style.zoom = (parseFloat(document.body.style.zoom) || 1) - 0.1">Zoom Out <span class="menu-shortcut">⌘-</span></div>
+                <div class="menu-dropdown-item" onclick="document.body.style.zoom = 1">Actual Size <span class="menu-shortcut">⌘0</span></div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            Go
+            <div class="menu-dropdown">
+                <div class="menu-dropdown-item" onclick="history.back()">Back <span class="menu-shortcut">⌘[</span></div>
+                <div class="menu-dropdown-item" onclick="history.forward()">Forward <span class="menu-shortcut">⌘]</span></div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item" onclick="window.location='index.html'">Home</div>
+                <div class="menu-dropdown-item" onclick="window.location='portfolio.html'">Portfolio</div>
+                <div class="menu-dropdown-item" onclick="window.location='photography.html'">Photography</div>
+                <div class="menu-dropdown-item" onclick="window.location='contact.html'">Contact</div>
+            </div>
+        </div>
+        
+        <div class="menu-item">
+            Help
+            <div class="menu-dropdown">
+                <div class="menu-dropdown-item" onclick="alert('Nikhil Bastikar\'s Personal Website\nVersion 1.0\n\nBuilt with ❤️ using HTML, CSS & JavaScript\n\nInspired by Mac OS 8/9')">About This Website</div>
+                <div class="menu-divider"></div>
+                <div class="menu-dropdown-item" onclick="window.open('https://github.com/nikhilGreenBot', '_blank')">Visit GitHub</div>
+                <div class="menu-dropdown-item" onclick="window.location='contact.html'">Contact Developer</div>
+            </div>
+        </div>
+        
+        <span class="menu-clock" id="menuClock"></span>
+    </div>
 
-            <section class="content">
+    <!-- Desktop Area -->
+    <div class="desktop">
+        <!-- Main Application Window -->
+        <div class="main-window">
+            <!-- Window Title Bar -->
+            <div class="window-title-bar">
+                <div class="window-buttons">
+                    <span class="window-btn window-btn-close" title="Close"></span>
+                    <span class="window-btn window-btn-maximize" title="Fullscreen"></span>
+                </div>
+                <span class="window-title">Nikhil Bastikar — Contact</span>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="tab-bar">
+                <a href="index.html" class="tab">Home</a>
+                <a href="portfolio.html" class="tab">Portfolio</a>
+                <a href="photography.html" class="tab">Photography</a>
+                <a href="contact.html" class="tab active">Contact</a>
+            </div>
+            
+            <!-- Window Content -->
+            <div class="window-content">
+                <!-- Profile Section -->
+                <div class="profile-section">
+                    <img
+                      src="assets/crocodile-hero-320.jpg"
+                      srcset="assets/crocodile-hero-160.jpg 1x, assets/crocodile-hero-320.jpg 2x"
+                      width="140" height="140"
+                      alt="Nikhil Bastikar"
+                      class="profile-photo"
+                    />
+                    <h1>Get In Touch</h1>
+                    <p class="tagline">Let's connect and collaborate</p>
+                </div>
+                
+                <!-- Contact Section -->
+                <div class="section-header">
+                    📧 Connect With Me
+                </div>
                 <div class="contact-section">
                     <div class="social-links">
-                        <a href="https://github.com/nikhilGreenBot" target="_blank" class="social-link github-link">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://github.com/nikhilGreenBot" target="_blank" class="social-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
                             <span>GitHub</span>
                         </a>
                         
-                        <a href="mailto:nikhilbastikar22@gmail.com" class="social-link email-link">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="mailto:nikhilbastikar22@gmail.com" class="social-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                             </svg>
                             <span>Email</span>
                         </a>
                         
-                        <a href="https://facebook.com/nikhilbastikar" target="_blank" class="social-link facebook-link">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <a href="https://www.facebook.com/profile.php?id=100091432599160" target="_blank" class="social-link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                             <span>Facebook</span>
                         </a>
                     </div>
                 </div>
-            </section>
-        </main>
-
-        <footer>
-            <div class="footer-content">
-                <p>&copy; 2025 nikhilGreenBot. Built with ❤️</p>
+            </div>
+            
+            <!-- Window Footer -->
+            <div class="window-footer">
+                <span>© 2025 nikhilGreenBot. Built with ❤️</span>
                 <div class="footer-links">
-                    <a href="#rss">RSS</a>
-                    <a href="https://github.com/nikhilGreenBot/panda-blog" target="_blank">GitHub</a>
+                    <a href="index.html">Home</a>
+                    <a href="https://github.com/nikhilGreenBot" target="_blank">GitHub</a>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Update clock
+        function updateClock() {
+            const now = new Date();
+            const options = { weekday: 'short', hour: 'numeric', minute: '2-digit' };
+            document.getElementById('menuClock').textContent = now.toLocaleString('en-US', options);
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+        
+        // Window buttons
+        document.querySelector('.window-btn-close').addEventListener('click', () => {
+            if(confirm('Close this window?')) window.close();
+        });
+        document.querySelector('.window-btn-maximize').addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        });
+    </script>
 </body>
 </html>
