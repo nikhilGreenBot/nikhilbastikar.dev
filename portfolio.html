@@ -6,113 +6,156 @@
     <title>Portfolio — Nikhil Bastikar</title>
     <meta name="description" content="Portfolio of Nikhil Bastikar - Mobile App Developer. View my Flutter, iOS, and Android projects including Skimpulse.">
     <meta name="author" content="Nikhil Bastikar">
+    <meta name="keywords" content="Nikhil Bastikar, portfolio, Flutter apps, iOS apps, Android apps, Skimpulse, mobile developer">
     <link rel="canonical" href="https://nikhilbastikar.dev/portfolio.html">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Portfolio — Nikhil Bastikar">
     <meta property="og:description" content="Mobile App Developer portfolio. Flutter, iOS, and Android projects.">
     <meta property="og:url" content="https://nikhilbastikar.dev/portfolio.html">
+    <meta property="og:image" content="https://nikhilbastikar.dev/og.jpg">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Nikhil Bastikar Portfolio",
+      "description": "Mobile app development portfolio",
+      "author": {
+        "@type": "Person",
+        "name": "Nikhil Bastikar"
+      }
+    }
+    </script>
     <link rel="icon" href="assets/icon-32.jpg" sizes="32x32" type="image/jpeg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .project-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-image img {
+            width: 80px;
+            height: 80px;
+            border-radius: 16px;
+        }
+        .project-content {
+            padding: 1.5rem;
+        }
+        .project-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+        }
+        .project-content p {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .project-tag {
+            background: rgba(76, 175, 80, 0.1);
+            color: #4CAF50;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+        .project-links a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .project-links a:hover {
+            color: #2E7D32;
+        }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        @media (prefers-color-scheme: dark) {
+            .project-card {
+                background: #242424;
+                border-color: rgba(255,255,255,0.1);
+            }
+            .project-content h3 {
+                color: #fff;
+            }
+            .project-content p {
+                color: #aaa;
+            }
+            .project-tag {
+                background: rgba(102, 187, 106, 0.15);
+                color: #66BB6A;
+            }
+            .project-links a {
+                color: #66BB6A;
+            }
+            .section-subtitle {
+                color: #999;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Mac OS Menu Bar -->
-    <div class="menu-bar">
-        <span class="apple-logo">&#63743;</span>
-        
-        <div class="menu-item">
-            File
-            <div class="menu-dropdown">
-                <div class="menu-dropdown-item">New Window <span class="menu-shortcut">⌘N</span></div>
-                <div class="menu-dropdown-item">Open Location... <span class="menu-shortcut">⌘L</span></div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item">Close Window <span class="menu-shortcut">⌘W</span></div>
-                <div class="menu-dropdown-item">Save Page As... <span class="menu-shortcut">⌘S</span></div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item" onclick="window.print()">Print... <span class="menu-shortcut">⌘P</span></div>
-            </div>
-        </div>
-        
-        <div class="menu-item">
-            Edit
-            <div class="menu-dropdown">
-                <div class="menu-dropdown-item disabled">Undo <span class="menu-shortcut">⌘Z</span></div>
-                <div class="menu-dropdown-item disabled">Redo <span class="menu-shortcut">⇧⌘Z</span></div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item" onclick="document.execCommand('cut')">Cut <span class="menu-shortcut">⌘X</span></div>
-                <div class="menu-dropdown-item" onclick="document.execCommand('copy')">Copy <span class="menu-shortcut">⌘C</span></div>
-                <div class="menu-dropdown-item" onclick="document.execCommand('paste')">Paste <span class="menu-shortcut">⌘V</span></div>
-                <div class="menu-dropdown-item" onclick="document.execCommand('selectAll')">Select All <span class="menu-shortcut">⌘A</span></div>
-            </div>
-        </div>
-        
-        <div class="menu-item">
-            View
-            <div class="menu-dropdown">
-                <div class="menu-dropdown-item" onclick="document.body.requestFullscreen()">Enter Full Screen <span class="menu-shortcut">⌃⌘F</span></div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item" onclick="location.reload()">Reload Page <span class="menu-shortcut">⌘R</span></div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item" onclick="document.body.style.zoom = (parseFloat(document.body.style.zoom) || 1) + 0.1">Zoom In <span class="menu-shortcut">⌘+</span></div>
-                <div class="menu-dropdown-item" onclick="document.body.style.zoom = (parseFloat(document.body.style.zoom) || 1) - 0.1">Zoom Out <span class="menu-shortcut">⌘-</span></div>
-                <div class="menu-dropdown-item" onclick="document.body.style.zoom = 1">Actual Size <span class="menu-shortcut">⌘0</span></div>
-            </div>
-        </div>
-        
-        <div class="menu-item">
-            Go
-            <div class="menu-dropdown">
-                <div class="menu-dropdown-item" onclick="history.back()">Back <span class="menu-shortcut">⌘[</span></div>
-                <div class="menu-dropdown-item" onclick="history.forward()">Forward <span class="menu-shortcut">⌘]</span></div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item" onclick="window.location='index.html'">Home</div>
-                <div class="menu-dropdown-item" onclick="window.location='portfolio.html'">Portfolio</div>
-                <div class="menu-dropdown-item" onclick="window.location='photography.html'">Photography</div>
-                <div class="menu-dropdown-item" onclick="window.location='contact.html'">Contact</div>
-            </div>
-        </div>
-        
-        <div class="menu-item">
-            Help
-            <div class="menu-dropdown">
-                <div class="menu-dropdown-item" onclick="alert('Nikhil Bastikar\'s Personal Website\nVersion 1.0\n\nBuilt with ❤️ using HTML, CSS & JavaScript\n\nInspired by Mac OS 8/9')">About This Website</div>
-                <div class="menu-divider"></div>
-                <div class="menu-dropdown-item" onclick="window.open('https://github.com/nikhilGreenBot', '_blank')">Visit GitHub</div>
-                <div class="menu-dropdown-item" onclick="window.location='contact.html'">Contact Developer</div>
-            </div>
-        </div>
-        
-        <span class="menu-clock" id="menuClock"></span>
-    </div>
+    <div class="container page-fade">
+        <header>
+            <nav>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="portfolio.html" class="active">Portfolio</a>
+                    <a href="photography.html">Photography</a>
+                    <a href="contact.html" class="nav-tag">Contact</a>
+                </div>
+            </nav>
+        </header>
 
-    <!-- Desktop Area -->
-    <div class="desktop">
-        <!-- Main Application Window -->
-        <div class="main-window">
-            <!-- Window Title Bar -->
-            <div class="window-title-bar">
-                <div class="window-buttons">
-                    <span class="window-btn window-btn-close" title="Close"></span>
-                    <span class="window-btn window-btn-maximize" title="Fullscreen"></span>
-                </div>
-                <span class="window-title">Nikhil Bastikar — Portfolio</span>
-            </div>
-            
-            <!-- Tab Navigation -->
-            <div class="tab-bar">
-                <a href="index.html" class="tab">Home</a>
-                <a href="portfolio.html" class="tab active">Portfolio</a>
-                <a href="photography.html" class="tab">Photography</a>
-                <a href="contact.html" class="tab">Contact</a>
-            </div>
-            
-            <!-- Window Content -->
-            <div class="window-content">
-                <!-- Section Header -->
-                <div class="section-header">
-                    💼 My Projects — Apps and tools I've built
-                </div>
-                
-                <!-- Portfolio Grid -->
+        <main>
+            <section class="content" style="margin-top: 2rem;">
+                <h1 class="section-title">My Projects</h1>
+                <p class="section-subtitle">Apps and tools I've built</p>
+
                 <div class="portfolio-grid">
                     <!-- Skimpulse -->
                     <div class="project-card">
@@ -137,7 +180,7 @@
                     <!-- Skyglow -->
                     <div class="project-card">
                         <div class="project-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                            <span style="font-size: 2.5rem;">🌅</span>
+                            <span style="font-size: 3rem;">🌅</span>
                         </div>
                         <div class="project-content">
                             <h3>Skyglow</h3>
@@ -152,39 +195,19 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            
-            <!-- Window Footer -->
-            <div class="window-footer">
-                <span>© 2025 Nikhil Bastikar. Built with ❤️</span>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Nikhil Bastikar. Built with ❤️</p>
                 <div class="footer-links">
                     <a href="https://github.com/nikhilGreenBot" target="_blank">GitHub</a>
                 </div>
             </div>
-        </div>
+        </footer>
     </div>
 
-    <script>
-        // Update clock
-        function updateClock() {
-            const now = new Date();
-            const options = { weekday: 'short', hour: 'numeric', minute: '2-digit' };
-            document.getElementById('menuClock').textContent = now.toLocaleString('en-US', options);
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-        
-        // Window buttons
-        document.querySelector('.window-btn-close').addEventListener('click', () => {
-            if(confirm('Close this window?')) window.close();
-        });
-        document.querySelector('.window-btn-maximize').addEventListener('click', () => {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
