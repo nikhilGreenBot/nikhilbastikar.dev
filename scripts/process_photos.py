@@ -11,15 +11,15 @@ from PIL import Image, ImageDraw, ImageFont
 
 WATERMARK = "© Nikhil Bastikar"
 FULL_MAX = 2400
-THUMB_MAX = 600
-JPEG_QUALITY = 88
+THUMB_MAX = 480
+JPEG_QUALITY = 92
 
 
-def load_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+def load_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
     candidates = [
-        "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
         "/System/Library/Fonts/Supplemental/Arial.ttf",
-        "/Library/Fonts/Arial Bold.ttf",
+        "/System/Library/Fonts/Supplemental/Arial Bold.ttf" if bold else "/System/Library/Fonts/Supplemental/Arial.ttf",
+        "/Library/Fonts/Arial.ttf",
     ]
     for path in candidates:
         if Path(path).exists():
@@ -33,26 +33,26 @@ def add_watermark(img: Image.Image) -> Image.Image:
     draw = ImageDraw.Draw(overlay)
 
     width, height = base.size
-    font_size = max(18, width // 45)
+    font_size = max(11, width // 90)
     font = load_font(font_size)
     bbox = draw.textbbox((0, 0), WATERMARK, font=font)
     text_w = bbox[2] - bbox[0]
     text_h = bbox[3] - bbox[1]
-    margin = max(16, width // 80)
+    margin = max(10, width // 120)
     x = width - text_w - margin
     y = height - text_h - margin
 
-    # Soft shadow for readability on bright/dark areas
-    draw.text((x + 2, y + 2), WATERMARK, font=font, fill=(0, 0, 0, 90))
-    draw.text((x, y), WATERMARK, font=font, fill=(255, 255, 255, 150))
+    # Subtle watermark — readable but not dominant
+    draw.text((x + 1, y + 1), WATERMARK, font=font, fill=(0, 0, 0, 45))
+    draw.text((x, y), WATERMARK, font=font, fill=(255, 255, 255, 72))
 
     return Image.alpha_composite(base, overlay).convert("RGB")
 
 
-def resize_max(img: Image.Image, max_dim: int) -> Image.Image:
+def resize_max(img: Image.Image, max_dim: int, allow_upscale: bool = False) -> Image.Image:
     w, h = img.size
     if max(w, h) <= max_dim:
-        return img
+        return img if allow_upscale else img.copy()
     if w >= h:
         new_w = max_dim
         new_h = round(h * max_dim / w)
@@ -64,15 +64,16 @@ def resize_max(img: Image.Image, max_dim: int) -> Image.Image:
 
 def process_source(src: Path, dst_dir: Path, slug: str) -> tuple[Path, Path]:
     img = Image.open(src)
-    img = resize_max(img, FULL_MAX)
+    # Never upscale — keeps native sharpness from the source file
+    img = resize_max(img, FULL_MAX, allow_upscale=False)
     img = add_watermark(img)
 
     full_path = dst_dir / f"{slug}.jpg"
     thumb_path = dst_dir / f"{slug}-thumb.jpg"
     img.save(full_path, "JPEG", quality=JPEG_QUALITY, optimize=True)
 
-    thumb = resize_max(img, THUMB_MAX)
-    thumb.save(thumb_path, "JPEG", quality=82, optimize=True)
+    thumb = resize_max(img, THUMB_MAX, allow_upscale=False)
+    thumb.save(thumb_path, "JPEG", quality=85, optimize=True)
     return full_path, thumb_path
 
 
